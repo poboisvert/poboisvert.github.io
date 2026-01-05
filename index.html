@@ -1,16 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Three.js App</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PO's World</title>
+    <meta property="og:title" content="PO's World"/>
+    <meta property="og:image" content="assets/images/poboisvert_og.png"/>
+    <meta property="og:description" content="Portfolio Pierre-Olivier Boisvert - Frontend Developer"/>
+    <meta property="og:url" content="poboisvert.com"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="627"/>
+    <meta property="og:type" content="website"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" type="image/png" href="assets/icons/favicon.ico" sizes="16x16">
+</head>
+<body>
+    <div id="loadingscreen">
+        <div id="loader-wrapper">
+            <div class="title">Welcome to my world!</div>
+            <h1 class="loader-text-right"><span>I'm Pierre-Olivier, a Frontend Developer passionate about building innovative digital experiences and scalable web applications.</span></h1>
+            <p class="loader-text-right"><span>This website was last updated in 2026.</span></p>
+            <div id="progress">
+                <span id="loading">Loading...</span>
+                <div id="progress-bar"></div>
+            </div>
+            <button class="button cta start-button-hidden" id="start-button" href="#start">Explore my world <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <img src="assets/images/footer_bg.png" alt="Footer background" id="loading-footer-image">
+    </div>
+    <div id="logo">PO's<br>WORLD</div>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox"/>
+            <span></span><span></span><span></span>
+            <ul id="menu">
+                <a href="index.html"><li class="active">PO's World</li></a>
+                <a href="about.html"><li>About</li></a>
+                <a href="legal.html"><li>Legal</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+            </ul>
+        </div>
+    </nav>
+    <label class="button-round" id="switch">
+        <input id="myCheckbox" type="checkbox" checked>
+        <i id="moon" class="icon fa fa-moon fa-xl"></i>
+        <i id="sun" class="icon fa fa-lightbulb fa-xl"></i>
+    </label>
+    <canvas class="webgl"></canvas>
+    <div class="sign" id="instructions">
+        <div id="animation"></div>
+        <div class="helptext"><span class="helptext">Drag to explore</span></div>
+    </div>
+    <div class="popup sign hidden">
+        <p2>My journey began in Quebec, where I completed my Master of Business Administration at Université Laval, including an Erasmus exchange in Oslo, Norway, in 2017.</p2>
+    </div>
+    <div class="popup project hidden">
+        <div class="content">
+            <div class="text project-text">
+                <h2 class="projecttitle">Info-Neige</h2>
+                <p class="subtitle">A data-driven application built with Supabase, Python, and SQL, featuring GeoJSON integration for geospatial data visualization and analysis.</p>
+            </div>
+        </div>
+        <a class="button primary" href="https://github.com/poboisvert/neigeapp" target="_blank">View Project<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="popup sign hidden">
+        <p2>I transitioned into technology, working in financial services and data analytics.</p2>
+    </div>
+    <div class="popup sign hidden">
+        <p2>In 2021, I completed a Data Analytics Certificate from the University of Toronto focusing on Python, SQL, and data analysis with Jupyter.</p2>
+    </div>
+    <div class="popup project hidden">
+        <div class="content">
+            <div class="text project-text">
+                <h2 class="projecttitle">Pomme Olive</h2>
+                <p class="subtitle">Founded a web agency specializing in eCommerce, landing pages, and Meta ads. Developed and delivered solutions using WordPress, Webflow, and Shopify for clients across Quebec.</p>
+            </div>
+        </div>
+        <a class="button primary" href="https://www.pomme-olive.com/" target="_blank">Visit Site<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="popup sign hidden">
+        <p2>Today, I work as a Frontend Developer at 4th Whale Marketing in Montreal. Bike around the map.</p2>
+    </div>
+    <div class="popup project hidden">
+        <div class="content">
+            <div class="text project-text">
+                <h2 class="projecttitle">ClusteringNBA</h2>
+                <p class="subtitle">ClusteringNBA is a machine learning project that analyzes NBA player statistics using Python and scikit-learn. By leveraging unsupervised learning algorithms such as K-Means clustering, the project identifies distinct player archetypes and patterns across seasons. The analysis includes dimensionality reduction (PCA), visualization of clusters, and interactive data exploration, offering insights into player roles and team-building strategies. Ideal for fans and analysts interested in data-driven basketball analysis.</p>
+            </div>
+        </div>
+        <a class="button primary" href="https://github.com/poboisvert/ClusteringNBA" target="_blank">View Project<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="popup project hidden">
+        <div class="content">
+            <div class="text project-text">
+                <h2 class="projecttitle">Next-Chartist</h2>
+                <p class="subtitle">Next-Chartist is a React charting library for Next.js, providing an easy-to-use, fully-typed React wrapper around the Chartist.js library. Designed for Next.js 13+ (supports the App Router, RSC, and SSR), it enables developers to quickly add responsive, customizable charts to modern React and Typescript projects. Features include seamless SSR/CSR compatibility, declarative chart APIs, TypeScript types and props, direct support for Chartist plug-ins, and dark mode theming via CSS variables. Ideal for anyone looking to render beautiful charts in Next.js with zero client-side headaches.</p>
+            </div>
+        </div>
+        <a class="button primary" href="https://github.com/poboisvert/next-chartist" target="_blank">View Project<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="popup sign hidden" id="contact">
+        <p2>Want to connect?<br>Feel free to connect with me on <a href="https://www.linkedin.com/in/poboisvert/" target="_blank" class="contact-link">LinkedIn</a></p2>
+    </div>
+    <script src="js/app/buttons.js"></script>
+    <script type="module" src="js/app/3D.js"></script>
+</body>
 </html>
