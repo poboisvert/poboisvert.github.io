@@ -10,7 +10,7 @@ portfolio_next_2025/
 ├── index.html              # Main homepage with 3D scene
 ├── about.html              # About page
 ├── contact.html            # Contact page
-├── legal.html              # Legal/Cookie policy page
+├── legal.html              # Cookie Policy page
 ├── css/
 │   ├── loader.css          # Loading screen styles
 │   ├── menu.css            # Navigation menu styles

@@ -1,114 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PO's World</title>
-    <meta property="og:title" content="PO's World"/>
-    <meta property="og:image" content="assets/images/poboisvert_og.png"/>
+    <meta name="description" content="Portfolio of Pierre-Olivier Boisvert - Frontend Developer specializing in innovative digital experiences and scalable web applications.">
+    <meta name="author" content="Pierre-Olivier Boisvert">
+    <meta name="keywords" content="Frontend Developer, Web Development, Portfolio, React, JavaScript, Three.js">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PO's World - Pierre-Olivier Boisvert"/>
     <meta property="og:description" content="Portfolio Pierre-Olivier Boisvert - Frontend Developer"/>
-    <meta property="og:url" content="poboisvert.com"/>
+    <meta property="og:image" content="assets/images/poboisvert_og.png"/>
+    <meta property="og:url" content="https://poboisvert.com"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="627"/>
     <meta property="og:type" content="website"/>
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PO's World - Pierre-Olivier Boisvert">
+    <meta name="twitter:description" content="Portfolio Pierre-Olivier Boisvert - Frontend Developer">
+    <meta name="twitter:image" content="assets/images/poboisvert_og.png">
+
+    <title>PO's World - Pierre-Olivier Boisvert | Frontend Developer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/favicon.ico" sizes="16x16">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="icon" type="image/png" href="assets/icons/favicon.ico" sizes="16x16">
+    <link rel="stylesheet" href="css/accessibility.css">
 </head>
 <body>
-    <div id="loadingscreen">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Loading Screen Section -->
+    <section id="loadingscreen" aria-label="Loading screen">
+        <a href="https://github.com/poboisvert" target="_blank" rel="noopener noreferrer" id="loading-github-link" aria-label="Visit Pierre-Olivier's GitHub Profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+
+        <nav role="navigation" id="loading-menu" aria-label="Loading screen navigation">
+            <div id="loading-menuToggle">
+                <input type="checkbox" aria-label="Toggle navigation menu"/>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <ul id="loading-menu-list">
+                    <li><a href="index.html" aria-current="page">PO's World</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="legal.html">Legal</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <div id="loader-wrapper">
-            <div class="title">Welcome to my world!</div>
-            <h1 class="loader-text-right"><span>I'm Pierre-Olivier, a Frontend Developer passionate about building innovative digital experiences and scalable web applications.</span></h1>
-            <p class="loader-text-right"><span>This website was last updated in 2026.</span></p>
-            <div id="progress">
+            <h1 class="title">Welcome to my world!</h1>
+            <p class="loader-text-right">
+                <span>I'm Pierre-Olivier, a Frontend Developer passionate about building innovative digital experiences and scalable web applications.</span>
+            </p>
+            <p class="loader-text-right">
+                <span>This website was last updated in 2026.</span>
+            </p>
+            <div id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                 <span id="loading">Loading...</span>
                 <div id="progress-bar"></div>
             </div>
-            <button class="button cta start-button-hidden" id="start-button" href="#start">Explore my world <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="button cta start-button-hidden" id="start-button" type="button" aria-label="Start exploring the portfolio">
+                Explore my world <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
         </div>
-        <img src="assets/images/footer_bg.png" alt="Footer background" id="loading-footer-image">
-    </div>
-    <div id="logo">PO's<br>WORLD</div>
-    <nav role="navigation">
-        <div id="menuToggle">
-            <input type="checkbox"/>
-            <span></span><span></span><span></span>
-            <ul id="menu">
-                <a href="index.html"><li class="active">PO's World</li></a>
-                <a href="about.html"><li>About</li></a>
-                <a href="legal.html"><li>Legal</li></a>
-                <a href="contact.html"><li>Contact</li></a>
-            </ul>
+
+        <div class="footer-image-wrapper">
+            <img src="assets/images/footer_bg.png" alt="" id="loading-footer-image" role="presentation">
         </div>
-    </nav>
-    <label class="button-round" id="switch">
-        <input id="myCheckbox" type="checkbox" checked>
-        <i id="moon" class="icon fa fa-moon fa-xl"></i>
-        <i id="sun" class="icon fa fa-lightbulb fa-xl"></i>
-    </label>
-    <canvas class="webgl"></canvas>
-    <div class="sign" id="instructions">
-        <div id="animation"></div>
-        <div class="helptext"><span class="helptext">Drag to explore</span></div>
-    </div>
-    <div class="popup sign hidden">
-        <p2>My journey began in Quebec, where I completed my Master of Business Administration at Université Laval, including an Erasmus exchange in Oslo, Norway, in 2017.</p2>
-    </div>
-    <div class="popup project hidden">
-        <div class="content">
-            <div class="text project-text">
-                <h2 class="projecttitle">Info-Neige</h2>
-                <p class="subtitle">A data-driven application built with Supabase, Python, and SQL, featuring GeoJSON integration for geospatial data visualization and analysis.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Logo -->
+        <div id="logo" aria-label="PO's World Logo">PO's<br>WORLD</div>
+
+        <!-- Main Navigation -->
+        <nav role="navigation" aria-label="Main navigation">
+            <div id="menuToggle">
+                <input type="checkbox" aria-label="Toggle navigation menu"/>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <ul id="menu">
+                    <li><a href="index.html" aria-current="page">PO's World</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="legal.html">Legal</a></li>
+                </ul>
             </div>
-        </div>
-        <a class="button primary" href="https://github.com/poboisvert/neigeapp" target="_blank">View Project<i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="popup sign hidden">
-        <p2>I transitioned into technology, working in financial services and data analytics.</p2>
-    </div>
-    <div class="popup sign hidden">
-        <p2>In 2021, I completed a Data Analytics Certificate from the University of Toronto focusing on Python, SQL, and data analysis with Jupyter.</p2>
-    </div>
-    <div class="popup project hidden">
-        <div class="content">
-            <div class="text project-text">
-                <h2 class="projecttitle">Pomme Olive</h2>
-                <p class="subtitle">Founded a web agency specializing in eCommerce, landing pages, and Meta ads. Developed and delivered solutions using WordPress, Webflow, and Shopify for clients across Quebec.</p>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <label class="button-round" id="switch" aria-label="Toggle dark/light mode">
+            <input id="myCheckbox" type="checkbox" checked aria-label="Theme toggle checkbox">
+            <i id="moon" class="icon fa fa-moon fa-xl" aria-hidden="true"></i>
+            <i id="sun" class="icon fa fa-lightbulb fa-xl" aria-hidden="true"></i>
+        </label>
+
+        <!-- 3D Canvas -->
+        <canvas class="webgl" role="img" aria-label="Interactive 3D portfolio experience"></canvas>
+
+        <!-- Instructions -->
+        <aside class="sign" id="instructions" aria-label="Interaction instructions">
+            <div id="animation" aria-hidden="true"></div>
+            <p class="helptext"><span>Drag to explore</span></p>
+        </aside>
+
+        <!-- Journey Popups -->
+        <article class="popup sign hidden" aria-hidden="true">
+            <p>My journey began in Quebec, where I completed my Master of Business Administration at Université Laval, including an Erasmus exchange in Oslo, Norway, in 2017.</p>
+        </article>
+
+        <!-- Project: Info-Neige -->
+        <article class="popup project hidden" aria-hidden="true" data-project="info-neige">
+            <div class="content">
+                <div class="text project-text">
+                    <h2 class="projecttitle">Info-Neige</h2>
+                    <p class="subtitle">A data-driven application built with Supabase, Python, and SQL, featuring GeoJSON integration for geospatial data visualization and analysis.</p>
+                </div>
             </div>
-        </div>
-        <a class="button primary" href="https://www.pomme-olive.com/" target="_blank">Visit Site<i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="popup sign hidden">
-        <p2>Today, I work as a Frontend Developer at 4th Whale Marketing in Montreal. Bike around the map.</p2>
-    </div>
-    <div class="popup project hidden">
-        <div class="content">
-            <div class="text project-text">
-                <h2 class="projecttitle">ClusteringNBA</h2>
-                <p class="subtitle">ClusteringNBA is a machine learning project that analyzes NBA player statistics using Python and scikit-learn. By leveraging unsupervised learning algorithms such as K-Means clustering, the project identifies distinct player archetypes and patterns across seasons. The analysis includes dimensionality reduction (PCA), visualization of clusters, and interactive data exploration, offering insights into player roles and team-building strategies. Ideal for fans and analysts interested in data-driven basketball analysis.</p>
+            <a class="button primary" href="https://github.com/poboisvert/neigeapp" target="_blank" rel="noopener noreferrer">
+                View Project<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </article>
+
+        <article class="popup sign hidden" aria-hidden="true">
+            <p>I pivoted from commercial banking analysis to data analysis.</p>
+        </article>
+
+        <article class="popup sign hidden" aria-hidden="true">
+            <p>In 2021, I completed a Data Analytics Certificate from the University of Toronto focusing on Python, SQL, and data analysis with Jupyter.</p>
+        </article>
+
+        <!-- Project: Pomme Olive -->
+        <article class="popup project hidden" aria-hidden="true" data-project="pomme-olive">
+            <div class="content">
+                <div class="text project-text">
+                    <h2 class="projecttitle">Pomme Olive</h2>
+                    <p class="subtitle">Founded a web agency specializing in eCommerce, landing pages, and Meta ads. Developed and delivered solutions using WordPress, Webflow, and Shopify for clients across Quebec.</p>
+                </div>
             </div>
-        </div>
-        <a class="button primary" href="https://github.com/poboisvert/ClusteringNBA" target="_blank">View Project<i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="popup project hidden">
-        <div class="content">
-            <div class="text project-text">
-                <h2 class="projecttitle">Next-Chartist</h2>
-                <p class="subtitle">Next-Chartist is a React charting library for Next.js, providing an easy-to-use, fully-typed React wrapper around the Chartist.js library. Designed for Next.js 13+ (supports the App Router, RSC, and SSR), it enables developers to quickly add responsive, customizable charts to modern React and Typescript projects. Features include seamless SSR/CSR compatibility, declarative chart APIs, TypeScript types and props, direct support for Chartist plug-ins, and dark mode theming via CSS variables. Ideal for anyone looking to render beautiful charts in Next.js with zero client-side headaches.</p>
+            <a class="button primary" href="https://www.pomme-olive.com/" target="_blank" rel="noopener noreferrer">
+                Visit Site<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </article>
+
+        <article class="popup sign hidden" aria-hidden="true">
+            <p>Today, I work as a Frontend Developer at 4th Whale Marketing in Montreal.</p>
+        </article>
+
+        <!-- Project: ClusteringNBA -->
+        <article class="popup project hidden" aria-hidden="true" data-project="clustering-nba">
+            <div class="content">
+                <div class="text project-text">
+                    <h2 class="projecttitle">ClusteringNBA</h2>
+                    <p class="subtitle">ClusteringNBA is a machine learning project that analyzes NBA player statistics using Python and scikit-learn. By leveraging unsupervised learning algorithms such as K-Means clustering, the project identifies distinct player archetypes and patterns across seasons. The analysis includes dimensionality reduction (PCA), visualization of clusters, and interactive data exploration, offering insights into player roles and team-building strategies. Ideal for fans and analysts interested in data-driven basketball analysis.</p>
+                </div>
             </div>
-        </div>
-        <a class="button primary" href="https://github.com/poboisvert/next-chartist" target="_blank">View Project<i class="fa-solid fa-arrow-right"></i></a>
+            <a class="button primary" href="https://github.com/poboisvert/ClusteringNBA" target="_blank" rel="noopener noreferrer">
+                View Project<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </article>
+
+        <!-- Project: Next-Chartist -->
+        <article class="popup project hidden" aria-hidden="true" data-project="next-chartist">
+            <div class="content">
+                <div class="text project-text">
+                    <h2 class="projecttitle">Next-Chartist</h2>
+                    <p class="subtitle">Next-Chartist is a React charting library for Next.js, providing an easy-to-use, fully-typed React wrapper around the Chartist.js library. Designed for Next.js 13+ (supports the App Router, RSC, and SSR), it enables developers to quickly add responsive, customizable charts to modern React and Typescript projects. Features include seamless SSR/CSR compatibility, declarative chart APIs, TypeScript types and props, direct support for Chartist plug-ins, and dark mode theming via CSS variables. Ideal for anyone looking to render beautiful charts in Next.js with zero client-side headaches.</p>
+                </div>
+            </div>
+            <a class="button primary" href="https://github.com/poboisvert/next-chartist" target="_blank" rel="noopener noreferrer">
+                View Project<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </article>
+
+        <!-- Contact Popup -->
+        <article class="popup sign hidden" id="contact" aria-hidden="true">
+            <p>Want to connect?<br>Feel free to connect with me on <a href="https://www.linkedin.com/in/poboisvert/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a></p>
+        </article>
+    </main>
+
+    <span id="main-content"></span>
+
+    <!-- Footer Background -->
+    <div class="footer-image-wrapper">
+        <img src="assets/images/footer_bg.png" alt="" class="footer-image" role="presentation">
     </div>
-    <div class="popup sign hidden" id="contact">
-        <p2>Want to connect?<br>Feel free to connect with me on <a href="https://www.linkedin.com/in/poboisvert/" target="_blank" class="contact-link">LinkedIn</a></p2>
-    </div>
-    <script src="js/app/buttons.js"></script>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app/buttons.js"></script>
     <script type="module" src="js/app/3D.js"></script>
 </body>
 </html>

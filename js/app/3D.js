@@ -1,10 +1,10 @@
 import * as THREE from "/js/lib/three.js";
-import { GLTFLoader } from "/js/loaders/GLTFLoader.js";
-import { OrbitControls } from "/js/loaders/OrbitControls.js";
-import { DRACOLoader } from "/js/loaders/DRACOLoader.js";
-import Stats from "/js/lib/stats.module.js";
-import { MeshSurfaceSampler } from "/js/loaders/MeshSurfaceSampler.js";
+import { GLTFLoader } from "/js/loaders/gltfloader.js";
+import { OrbitControls } from "/js/loaders/orbitcontrols.js";
+import { DRACOLoader } from "/js/loaders/dracoloader.js";
+import { MeshSurfaceSampler } from "/js/loaders/meshsurfacesampler.js";
 import { TWEEN } from "/js/lib/tween.module.min.js";
+import focusManager from "../utils/focusManager.js";
 
 /**
  * Debug
@@ -563,6 +563,7 @@ let g = 0.8;
 
 const popups = document.getElementsByClassName("popup");
 const clock = new THREE.Clock();
+let lastVisiblePopup = -1;
 
 const tick = () => {
   // Update controls
@@ -604,10 +605,24 @@ const tick = () => {
     ) {
       popups[i].classList.remove("hidden");
       popups[i].classList.add("visible");
+      popups[i].setAttribute("aria-hidden", "false");
+
+      if (lastVisiblePopup !== i) {
+        const projectName = popups[i].getAttribute("data-project");
+        const message = projectName ? `Viewing ${projectName}` : "Viewing story item";
+        focusManager.announceToScreenReader(message, "polite");
+        lastVisiblePopup = i;
+      }
     } else {
       popups[i].classList.add("hidden");
       popups[i].classList.remove("visible");
+      popups[i].setAttribute("aria-hidden", "true");
     }
+  }
+
+  const anyVisible = Array.from(popups).some(p => p.classList.contains("visible"));
+  if (!anyVisible && lastVisiblePopup !== -1) {
+    lastVisiblePopup = -1;
   }
 
   // Animation Mixer

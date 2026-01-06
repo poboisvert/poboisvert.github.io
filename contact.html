@@ -10,35 +10,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" type="image/png" href="assets/icons/favicon.ico" sizes="16x16">
 </head>
 
 <body style="background-color: black; color: white; max-width: 960px; margin: auto">
 
+<a href="#main-content" style="position: absolute; left: -9999px; z-index: 999; padding: 10px; background: #286742; color: white; text-decoration: none;">Skip to main content</a>
+
 <nav role="navigation">
     <div id="menuToggle">
     <input type="checkbox" />
-        <span style="  background: white;"></span>
-        <span style="  background: white;"></span>
-        <span style="  background: white;"></span>
+        <span style="background: white;"></span>
+        <span style="background: white;"></span>
+        <span style="background: white;"></span>
     <ul id="menu">
         <a href="index.html"><li>PO's World</li></a>
         <a href="about.html"><li>About</li></a>
-        <a href="legal.html"><li>Legal</li></a>
         <a href="contact.html"><li class="active">Contact</li></a>
+        <a href="legal.html"><li>Cookie Policy</li></a>
     </ul>
     </div>
 </nav>
 
-<div style="margin: 15% 20px 10% 20px;">
-<p2><a href="index.html">PO's World</a> / Contact</p2>
+<div id="main-content" style="margin: 15% 20px 10% 20px;">
+<nav aria-label="Breadcrumb" style="margin-bottom: 30px;">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style: none; padding: 0; display: flex; gap: 10px; font-size: 14px;">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="index.html" style="color: #286742; text-decoration: none;">
+                <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+        </li>
+        <li style="color: #666;">/</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name" style="color: white;">Contact</span>
+            <meta itemprop="position" content="2" />
+        </li>
+    </ol>
+</nav>
 <br><br><br>
 <h1>
     Thank you for visiting my portfolio!<br>
     I'm always open to connecting with fellow developers, designers, and creative professionals.
     <br><br>
-    Feel free to reach out to me on <a href="https://www.linkedin.com/in/poboisvert/" target="_blank" style="color: #286742;">LinkedIn</a> to discuss opportunities, collaborations, or just to connect!
-    
+    Feel free to reach out to me on <a href="https://www.linkedin.com/in/poboisvert/" target="_blank" rel="noopener noreferrer" style="color: #286742;">LinkedIn</a> to discuss opportunities, collaborations, or just to connect!
 </h1>
+<br><br>
+<p2>
+    Interested in learning more about my background?
+    <a href="about.html" style="color: #286742; text-decoration: underline;">Read my full professional experience</a>
+    or explore my <a href="index.html" style="color: #286742; text-decoration: underline;">interactive portfolio</a>.
+</p2>
+</div>
+
+<footer style="margin-top: 80px; height: 60px; padding: 8px 16px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-top: 1px solid rgba(255, 255, 255, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; box-sizing: border-box;">
+    <nav aria-label="Footer navigation" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+        <a href="index.html" style="color: #286742; text-decoration: none; font-size: 11px;">Home</a>
+        <a href="about.html" style="color: #286742; text-decoration: none; font-size: 11px;">About</a>
+        <a href="contact.html" style="color: #888; text-decoration: none; font-size: 11px;">Contact</a>
+        <a href="legal.html" style="color: #286742; text-decoration: none; font-size: 11px;">Cookie Policy</a>
+    </nav>
+    <div style="text-align: center; font-size: 8px; color: #888; margin-top: 2px;">
+        <p style="margin: 0; font-size: 12px;">&copy; 2026 Pierre-Olivier Boisvert. All rights reserved.</p>
+    </div>
+</footer>
+
 </body>
 </html>

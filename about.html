@@ -10,10 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" type="image/png" href="assets/icons/favicon.ico" sizes="16x16">
 </head>
 
 <body style="background-color: black; color: white; max-width: 960px; margin: auto">
+
+<a href="#main-content" style="position: absolute; left: -9999px; z-index: 999; padding: 10px; background: #286742; color: white; text-decoration: none;">Skip to main content</a>
 
 <nav role="navigation">
     <div id="menuToggle">
@@ -24,71 +27,119 @@
     <ul id="menu">
         <a href="index.html"><li>PO's World</li></a>
         <a href="about.html"><li class="active">About</li></a>
-        <a href="legal.html"><li>Legal</li></a>
         <a href="contact.html"><li>Contact</li></a>
+        <a href="legal.html"><li>Cookie Policy</li></a>
     </ul>
     </div>
 </nav>
 
-<div style="margin: 15% 20px 10% 20px;">
-    <p2>
-    <a href="index.html">PO's World</a> / About
-    </p2>
+<div id="main-content" style="margin: 15% 20px 10% 20px;">
+    <nav aria-label="Breadcrumb" style="margin-bottom: 30px;">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="list-style: none; padding: 0; display: flex; gap: 10px; font-size: 14px;">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="index.html" style="color: #286742; text-decoration: none;">
+                    <span itemprop="name">Home</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li style="color: #666;">/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name" style="color: white;">About</span>
+                <meta itemprop="position" content="2" />
+            </li>
+        </ol>
+    </nav>
     <br><br><br>
     <h1>I'm Pierre-Olivier Boisvert, a Frontend Developer passionate about building innovative digital experiences and scalable web applications.</h1>
     <br><br>
-    <h2>Current Role</h2>
-    <p2>
-        <strong>Frontend Developer</strong> at <strong>4th Whale Marketing</strong><br>
-        Montreal, Quebec, Canada | October 2022 - Present<br><br>
-        Leading software development using React.js 17+ and modern web technologies to create 
-        engaging user experiences and robust frontend solutions.
-    </p2>
-    <br><br>
-    <h2>Experience</h2>
-    <p2>
-        <strong>Business Intelligence Analyst</strong> — 4th Whale Marketing<br>
-        October 2021 - October 2022 · 1 year 1 month<br>
-        Worked collaboratively to improve ELT & ETL pipelines by orchestrating workflows and optimizing data processes.<br><br>
-        
-        <strong>Director of Underwriting</strong> — BrainFinance<br>
-        November 2019 - September 2021 · 1 year 11 months<br>
-        Montreal, Quebec, Canada<br><br>
-        
-        <strong>Client Solutions Associate - Analyst</strong> — Scotiabank<br>
-        April 2019 - October 2019 · 7 months<br>
-        Commercial Banking, Quebec, Quebec, Canada<br><br>
-        
-        <strong>Lending Services Officer</strong> — Scotiabank<br>
-        July 2018 - April 2019 · 10 months<br>
-        Commercial Banking, Montreal, Quebec, Canada
-    </p2>
-    <br><br>
-    <h2>Education</h2>
-    <p2>
-        <strong>Certificate, Data Analytics</strong><br>
-        University of Toronto<br>
-        December 2020 - June 2021<br>
-        DataCamp (Python, Spark & SQL)<br><br>
-        
-        <strong>Master of Business Administration (M.B.A.)</strong><br>
-        Université Laval<br>
-        2016 - 2018<br>
-        Activities and societies: The mission valuing Innovation
-    </p2>
-    <br><br>
-    <h2>Skills & Technologies</h2>
-    <p2>
-        React.js, Next.js, PostgreSQL, Python, SQL, JavaScript, TypeScript, 
-        Frontend Development, Full-Stack Development, Data Analytics, Business Intelligence
-    </p2>
-    <br><br>
-    <h2>Connect with me</h2>
-    <p2>
-        <a href="https://www.linkedin.com/in/poboisvert/" target="_blank" style="color: #286742;">LinkedIn</a> — Let's connect and explore opportunities together<br>
-        Open to work: Frontend Developer, Software Developer, Back End Developer, Full-stack Developer
-    </p2>
+
+    <!-- Current Role Container -->
+    <div style="background: rgba(147, 51, 234, 0.1); padding: 24px; margin-bottom: 32px; border-radius: 8px;">
+        <h2 style="margin-top: 0;">Current Role</h2>
+        <p2>
+            <strong>Frontend Developer</strong> at <strong>4th Whale Marketing</strong><br>
+            Montreal, Quebec, Canada | October 2022 - Present<br><br>
+            Leading software development using React.js 17+ and modern web technologies to create
+            engaging user experiences and robust frontend solutions.
+        </p2>
+    </div>
+
+    <!-- Career Journey Container -->
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 24px; margin-bottom: 32px; border-radius: 8px;">
+        <h2 style="margin-top: 0;">Career Journey</h2>
+        <p2>
+            My career evolution reflects a strategic transition from <strong>Commercial Banking</strong> to <strong>Data Analysis</strong> and ultimately to <strong>Frontend Development</strong>, combining financial acumen with technical expertise.<br><br>
+
+            <strong>Business Intelligence Analyst</strong> — 4th Whale Marketing<br>
+            October 2021 - October 2022 · 1 year 1 month<br>
+            Worked collaboratively to improve ELT & ETL pipelines by orchestrating workflows and optimizing data processes.<br><br>
+
+            <strong>Director of Underwriting</strong> — BrainFinance<br>
+            November 2019 - September 2021 · 1 year 11 months<br>
+            Montreal, Quebec, Canada<br><br>
+
+            <strong>Client Solutions Associate - Analyst</strong> — Scotiabank<br>
+            April 2019 - October 2019 · 7 months<br>
+            Commercial Banking, Quebec, Quebec, Canada<br><br>
+
+            <strong>Lending Services Officer</strong> — Scotiabank<br>
+            July 2018 - April 2019 · 10 months<br>
+            Commercial Banking, Montreal, Quebec, Canada
+        </p2>
+    </div>
+
+    <!-- Education Container -->
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 24px; margin-bottom: 32px; border-radius: 8px;">
+        <h2 style="margin-top: 0;">Education</h2>
+        <p2>
+            <strong>Certificate, Data Analytics</strong><br>
+            University of Toronto<br>
+            December 2020 - June 2021<br>
+            DataCamp (Python, Spark & SQL)<br><br>
+
+            <strong>Master of Business Administration (M.B.A.)</strong><br>
+            Université Laval<br>
+            2016 - 2018<br>
+            Activities and societies: The mission valuing Innovation
+        </p2>
+    </div>
+
+    <!-- Skills Container -->
+    <div style="background: rgba(255, 255, 255, 0.05); padding: 24px; margin-bottom: 32px; border-radius: 8px;">
+        <h2 style="margin-top: 0;">Skills & Technologies</h2>
+        <p2>
+            React.js, Next.js, PostgreSQL, Python, SQL, JavaScript, TypeScript,
+            Frontend Development, Full-Stack Development, Data Analytics, Business Intelligence
+        </p2>
+    </div>
+
+    <!-- Call to Action Container -->
+    <div style="background: linear-gradient(135deg, rgba(40, 103, 66, 0.2), rgba(40, 103, 66, 0.05)); padding: 32px; border-radius: 8px; text-align: center;">
+        <h2 style="margin-top: 0;">Interested in collaborating or viewing my work?</h2>
+        <p2 style="display: block; margin-bottom: 24px;">
+            You can see my projects or contact me
+        </p2>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://github.com/poboisvert" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #286742; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">View Projects</a>
+            <a href="https://www.linkedin.com/in/poboisvert/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: rgba(255, 255, 255, 0.1); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.2);">Connect With Me</a>
+        </div>
+        <p2 style="display: block; margin-top: 24px; font-size: 14px;">
+            Frontend Developer, Software Developer, Full-stack Developer
+        </p2>
+    </div>
 </div>
+
+<footer style="margin-top: 80px; height: 60px; padding: 8px 16px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-top: 1px solid rgba(255, 255, 255, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; box-sizing: border-box;">
+    <nav aria-label="Footer navigation" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+        <a href="index.html" style="color: #286742; text-decoration: none; font-size: 11px;">Home</a>
+        <a href="about.html" style="color: #888; text-decoration: none; font-size: 11px;">About</a>
+        <a href="contact.html" style="color: #286742; text-decoration: none; font-size: 11px;">Contact</a>
+        <a href="legal.html" style="color: #286742; text-decoration: none; font-size: 11px;">Cookie Policy</a>
+    </nav>
+    <div style="text-align: center; font-size: 8px; color: #888; margin-top: 2px;">
+        <p style="margin: 0; font-size: 12px;">&copy; 2026 Pierre-Olivier Boisvert. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>
