@@ -316,11 +316,11 @@ gltfLoader.load("/models/stag.glb", function (gltf) {
   scene.add(stag);
 });
 
-var robot;
-var mixer5;
-var action5;
-gltfLoader.load("/models/robo.glb", function (gltf) {
-  robot = gltf.scene;
+var norway;
+//var mixer5;
+//var action5;
+gltfLoader.load("/models/norway.glb", function (gltf) {
+  norway = gltf.scene;
   gltf.scene.traverse(function (node) {
     if (node.isMesh) {
       node.castShadow = true;
@@ -328,15 +328,16 @@ gltfLoader.load("/models/robo.glb", function (gltf) {
     }
   });
 
-  mixer5 = new THREE.AnimationMixer(robot);
-  action5 = mixer5.clipAction(gltf.animations[14]);
-  action5.play();
+  //mixer5 = new THREE.AnimationMixer(norway);
+  //action5 = mixer5.clipAction(gltf.animations[14]);
+  //action5.play();
 
-  robot.scale.set(0.5, 0.5, 0.5);
-  robot.position.set(0, 0, -9.5);
-  robot.rotation.y = -Math.PI;
+  //norway.scale.set(0.5, 0.5, 0.5);
+  norway.scale.set(0.7, 0.7, 0.7); // Reduce size by 20%
+  norway.position.set(0, 0, -9.5);
+  norway.rotation.y = -Math.PI - Math.PI / 2; // Rotate 45 degrees to the right
 
-  scene.add(robot);
+  scene.add(norway);
 });
 
 // Camera
@@ -609,7 +610,9 @@ const tick = () => {
 
       if (lastVisiblePopup !== i) {
         const projectName = popups[i].getAttribute("data-project");
-        const message = projectName ? `Viewing ${projectName}` : "Viewing story item";
+        const message = projectName
+          ? `Viewing ${projectName}`
+          : "Viewing story item";
         focusManager.announceToScreenReader(message, "polite");
         lastVisiblePopup = i;
       }
@@ -620,7 +623,9 @@ const tick = () => {
     }
   }
 
-  const anyVisible = Array.from(popups).some(p => p.classList.contains("visible"));
+  const anyVisible = Array.from(popups).some((p) =>
+    p.classList.contains("visible")
+  );
   if (!anyVisible && lastVisiblePopup !== -1) {
     lastVisiblePopup = -1;
   }
@@ -631,7 +636,7 @@ const tick = () => {
   if (mixer2) mixer2.update(delta);
   if (mixer3) mixer3.update(delta);
   if (mixer4) mixer4.update(delta);
-  if (mixer5) mixer5.update(delta);
+  //if (mixer5) mixer5.update(delta);
 
   if (mug) {
     mug.rotation.y -= 0.01;
