@@ -271,6 +271,18 @@
   z-index: 999;
 }
 
+@media only screen and (max-height: 1150px) {
+  .footer-image-wrapper {
+    opacity: 0.8;
+  }
+  
+  #loading-footer-image,
+  .footer-image {
+    max-height: 200px;
+    object-fit: contain;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .cta {
     width: 100%;

@@ -491,6 +491,17 @@ footer {
   color: #666;
 }
 
+@media only screen and (max-height: 1150px) {
+  .footer-image-wrapper {
+    opacity: 0.8;
+  }
+  
+  .footer-image {
+    max-height: 200px;
+    object-fit: contain;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   footer {
     padding: 10px 15px 8px 15px;
